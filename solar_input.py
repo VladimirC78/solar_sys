@@ -53,7 +53,7 @@ def parse_planet_parameters(line):
     y = splitted[5]
     vx = splitted[6]
     vy = splitted[7]
-    return r, color, m, x, y, vx, vy
+    return r, color, m, x, y, Vx, Vy
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
