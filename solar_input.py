@@ -39,9 +39,9 @@ def parse_star_parameters(line):
     m = splitted[3]
     x = splitted[4]
     y = splitted[5]
-    vx = splitted[6]
-    vy = splitted[7]
-    return r, color, m, x, y, vx, vy
+    Vx = splitted[6]
+    Vy = splitted[7]
+    return r, color, m, x, y, Vx, Vy
 
 
 def parse_planet_parameters(line):
