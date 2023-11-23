@@ -33,7 +33,7 @@ def read_space_objects_data_from_file(input_filename):
 
 
 def parse_star_parameters(line):
-    splitted = line.split(' ')
+    splitted = line.split(' ').lower()
     r = splitted[1]
     color = splitted[2]
     m = splitted[3]
@@ -45,7 +45,7 @@ def parse_star_parameters(line):
 
 
 def parse_planet_parameters(line):
-    splitted = line.split(' ')
+    splitted = line.split(' ').lower()
     r = splitted[1]
     color = splitted[2]
     m = splitted[3]
@@ -53,7 +53,7 @@ def parse_planet_parameters(line):
     y = splitted[5]
     vx = splitted[6]
     vy = splitted[7]
-    return r, color, m, x, y, Vx, Vy
+    return r, color, m, x, y, vx, vy
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
