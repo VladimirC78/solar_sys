@@ -7,17 +7,17 @@ class Star:
     Содержит массу, координаты, скорость звезды,
     а также визуальный радиус звезды в пикселах и её цвет.
     """
-    def __init__(self):
+    def __init__(self,r,color,m,x,y,vx,vy):
         self.type = "star"
-        self.m = 1
-        self.x = 0
-        self.y = 0
-        self.Vx = 0
-        self.Vy = 0
+        self.m = m
+        self.x = x
+        self.y = y
+        self.Vx = vx
+        self.Vy = vy
         self.Fx = 0
         self.Fy = 0
-        self.R = 5
-        self.color = "red"
+        self.R = r
+        self.color = color
 
 
 class Planet:
@@ -25,15 +25,15 @@ class Planet:
     Содержит массу, координаты, скорость планеты,
     а также визуальный радиус планеты в пикселах и её цвет
     """
-    def __init__(self):
+    def __init__(self,r,color,m,x,y,vx,vy):
 
         self.type = "planet"
-        self.m = 1
-        self.x = 0
-        self.y = 0
-        self.Vx = 0
-        self.Vy = 0
+        self.m = m
+        self.x = x
+        self.y = y
+        self.Vx = vx
+        self.Vy = vy
         self.Fx = 0
         self.Fy = 0
-        self.R = 5
-        self.color = "green"
+        self.R = r
+        self.color = color
