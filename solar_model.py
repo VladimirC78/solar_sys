@@ -10,11 +10,11 @@ def calculate_force(body, space_objects):
 
     body.Fx = body.Fy = 0
     for obj in space_objects:
-        if body == obj:
+        if body == obj or not obj.alive:
             continue
-        r = ((body.x - obj.x)**2 + (body.y - obj.y)**2)**0.5
-        body.Fx += (gravitational_constant * body.m * obj.m * (body.x - obj.x)/r**3)
-        body.Fy += (gravitational_constant * body.m * obj.m * (body.y - obj.y)/r**3)
+        r = ((body.x - obj.x) ** 2 + (body.y - obj.y) ** 2) ** 0.5
+        body.Fx += -gravitational_constant * body.m * obj.m / r ** 3 * (body.x - obj.x)
+        body.Fy += -gravitational_constant * body.m * obj.m / r ** 3 * (body.y - obj.y)
 
         # FIXME: обработка аномалий при прохождении одного тела сквозь другое
 

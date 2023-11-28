@@ -3,6 +3,7 @@
 
 from solar_objects import Star, Planet
 from solar_vis import DrawableObject
+import json
 
 
 def read_space_objects_data_from_file(input_filename):
@@ -59,24 +60,17 @@ def parse_planet_parameters(line, planet):
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
-    """Сохраняет данные о космических объектах в файл.
-
-    Строки должны иметь следующий формат:
-
-    Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
-    Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
-    Параметры:
-
-    **output_filename** — имя входного файла
-
-    **space_objects** — список объектов планет и звёзд
-    """
-    with open(output_filename, 'w') as out_file:
-        for obj in space_objects:
-            print(out_file, "%s %d %s %f" % ('1', 2, '3', 4.5))
-            # FIXME!
+    """Функция преобразует объекты в список словарей и записывает в файл"""
+    with open(output_filename, "w") as output_file:
+        object1=[{'type': obj.type,
+                         'R': obj.R,
+                         'color': obj.color,
+                         'm': obj.m,
+                         'x': obj.x,
+                         'y': obj.y,
+                         'v_x': obj.Vx,
+                         'v_y': obj.Vy} for obj in space_objects]
+        output_file.write(json.dumps(object1))
 
 
 if __name__ == "__main__":
