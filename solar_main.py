@@ -75,6 +75,7 @@ def open_file():
     in_filename = "solar_system.txt"
     space_objects = read_space_objects_data_from_file(in_filename)
     max_distance = max([max(abs(obj.obj.x), abs(obj.obj.y)) for obj in space_objects])
+    print(max_distance)
     calculate_scale_factor(max_distance)
 
 
@@ -87,7 +88,7 @@ def handle_events(events, menu):
 
 
 def slider_to_real(val):
-    return np.exp(5 + val)
+    return np.exp(4*val)
 
 
 def slider_reaction(event):
@@ -165,8 +166,8 @@ def main():
             text = "%d seconds passed" % (int(model_time))
             timer.set_text(text)
 
-        last_time = cur_time
         drawer.update(space_objects, box)
+        last_time = cur_time
         time.sleep(1.0 / 60)
 
     print('Modelling finished!')

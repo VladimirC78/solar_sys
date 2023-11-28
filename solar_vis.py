@@ -9,9 +9,9 @@ import pygame as pg
 
 header_font = "Arial-16"
 
-window_width = 900
+window_width = 1000
 
-window_height = 12
+window_height = 900
 
 scale_factor = 1
 """Масштабирование экранных координат по отношению к физическим.
@@ -53,7 +53,7 @@ def scale_y(y):
 
     **y** — y-координата модели.
     """
-    return int(-y * scale_factor) + window_height // 2
+    return int(y * scale_factor) + window_height // 2
 
 
 if __name__ == "__main__":
@@ -65,7 +65,7 @@ class Drawer:
         self.screen = screen
 
     def update(self, figures, ui):
-        self.screen.fill((255, 255, 255))
+        self.screen.fill((0, 0, 0))
         for figure in figures:
             figure.draw(self.screen)
 
