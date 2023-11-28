@@ -21,10 +21,12 @@ def read_space_objects_data_from_file(input_filename):
 
             object_type = line.split()[0].lower()
             if object_type == "star":
-                star = Star(parse_star_parameters(line))
+                star = Star()
+                parse_star_parameters(line, star)
                 objects.append(star)
             elif object_type == "planet":
-                planet = Planet(parse_planet_parameters(line))
+                planet = Planet()
+                parse_planet_parameters(line, planet)
                 objects.append(planet)
             else:
                 print("Unknown space object")
@@ -32,28 +34,28 @@ def read_space_objects_data_from_file(input_filename):
     return [DrawableObject(obj) for obj in objects]
 
 
-def parse_star_parameters(line):
+def parse_star_parameters(line, star):
     splitted = line.split(' ').lower()
-    r = splitted[1]
-    color = splitted[2]
-    m = splitted[3]
-    x = splitted[4]
-    y = splitted[5]
-    Vx = splitted[6]
-    Vy = splitted[7]
-    return r, color, m, x, y, Vx, Vy
+    star.R = float(splitted[1])
+    star.color = splitted[2]
+    star.m = float(splitted[3])
+    star.x = float(splitted[4])
+    star.y = float(splitted[5])
+    star.Vx = float(splitted[6])
+    star.Vy = float(splitted[7])
+    pass
 
 
-def parse_planet_parameters(line):
+def parse_planet_parameters(line, planet):
     splitted = line.split(' ').lower()
-    r = splitted[1]
-    color = splitted[2]
-    m = splitted[3]
-    x = splitted[4]
-    y = splitted[5]
-    vx = splitted[6]
-    vy = splitted[7]
-    return r, color, m, x, y, vx, vy
+    planet.R = float(splitted[1])
+    planet.color = splitted[2]
+    planet.m = float(splitted[3])
+    planet.x = float(splitted[4])
+    planet.y = float(splitted[5])
+    planet.Vx = float(splitted[6])
+    planet.Vy = float(splitted[7])
+    pass
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
