@@ -87,7 +87,7 @@ def handle_events(events, menu):
 
 
 def slider_to_real(val):
-    return np.exp(1.6*val)
+    return np.exp(1.5*val)
 
 
 def slider_reaction(event):
