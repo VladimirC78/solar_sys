@@ -60,7 +60,7 @@ def parse_planet_parameters(line, planet):
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
-    """Функция преобразует объекты в список словарей и записывает в файл"""
+    """Функция преобразует объекты в список словарей и записывает в файлФ"""
     with open(output_filename, "w") as output_file:
         object1=[{'type': obj.type,
                          'R': obj.R,

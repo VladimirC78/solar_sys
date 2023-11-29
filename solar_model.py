@@ -18,7 +18,7 @@ def calculate_force(body, space_objects):
         body.Fx += -gravitational_constant * body.m * obj.m / r ** 3 * (body.x - obj.x)
         body.Fy += -gravitational_constant * body.m * obj.m / r ** 3 * (body.y - obj.y)
 
-        # FIXME: обработка аномалий при прохождении одного тела сквозь другое
+        # FIXME: обработка аномалий при прохождении одного тела сквозь друго
 
 
 def move_space_object(body, dt):
