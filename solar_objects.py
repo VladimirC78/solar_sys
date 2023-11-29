@@ -18,6 +18,7 @@ class Star:
         self.Fy = 0
         self.R = 0
         self.color = (0, 0, 0)
+        self.alive = 1
 
 
 class Planet:
@@ -37,3 +38,4 @@ class Planet:
         self.Fy = 0
         self.R = 0
         self.color = (0, 0, 0)
+        self.alive = 1

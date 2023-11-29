@@ -21,7 +21,7 @@ model_time = 0
 """Физическое время от начала расчёта.
 Тип: float"""
 
-time_scale = 1000.0
+time_scale = 100.0
 """Шаг по времени при моделировании.
 Тип: float"""
 
@@ -75,7 +75,6 @@ def open_file():
     in_filename = "solar_system.txt"
     space_objects = read_space_objects_data_from_file(in_filename)
     max_distance = max([max(abs(obj.obj.x), abs(obj.obj.y)) for obj in space_objects])
-    print(max_distance)
     calculate_scale_factor(max_distance)
 
 
